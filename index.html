@@ -10,13 +10,14 @@
   <script src="https://checkout-sandbox.getbread.com/bread.js" data-api-key="c9af398c-de5d-4613-82e0-32105acd2f1b"></script>
   <script>
     function testShowCheckout() {
-      setTimeout(function() {
+      fetch('http://requestbin.fullcontact.com/piywm7pi')
+      .then(r => {
         bread.showCheckout({
           actAsLabel: false,
           customTotal: 1000,
           done: function() {return},
           showInWindow: true
-        }, 100);
+        });
       });
     }
     document.getElementById('bread-checkout').addEventListener('click', testShowCheckout);
