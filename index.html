@@ -9,15 +9,17 @@
   <div id="bread-checkout" style="height:50px;width:250px;background:#000;color:#fff;">Click</div>
   <script src="https://checkout-sandbox.getbread.com/bread.js" data-api-key="c9af398c-de5d-4613-82e0-32105acd2f1b"></script>
   <script>
-    document.getElementById('bread-checkout').addEventListener('click', () => {
-      bread.showCheckout({
-//         buttonId: 'bread-checkout',
-        actAsLabel: false,
-        customTotal: 1000,
-        done: function() {return},
-        showInWindow: true
+    function testShowCheckout() {
+      setTimeout(function() {
+        bread.showCheckout({
+          actAsLabel: false,
+          customTotal: 1000,
+          done: function() {return},
+          showInWindow: true
+        });
       });
-    });
+    }
+    document.getElementById('bread-checkout').addEventListener('click', testShowCheckout);
     
 //     bread.checkout({
 //       buttonId: 'bread-checkout',
